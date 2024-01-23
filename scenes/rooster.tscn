@@ -1,0 +1,119 @@
+[gd_scene load_steps=7 format=3 uid="uid://x35n586nmokc"]
+
+[ext_resource type="Texture2D" uid="uid://grbpvk6hor51" path="res://assets/characters/rooster/Run.png" id="1_jbauk"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_qbpn5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b3sxx"]
+radius = 16.0
+height = 42.0
+
+[sub_resource type="Animation" id="Animation_xloig"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemyArea:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemyArea/Animation:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EnemyArea/Animation:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_nq7ma"]
+resource_name = "rooster_move"
+length = 2.9
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EnemyArea:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 0.615572),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(120, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EnemyArea/Animation:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 0, 1, 3, 4, 5, 6, 7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EnemyArea/Animation:flip_h")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h68aw"]
+_data = {
+"RESET": SubResource("Animation_xloig"),
+"rooster_move": SubResource("Animation_nq7ma")
+}
+
+[node name="Rooster" type="Node2D"]
+script = ExtResource("1_qbpn5")
+
+[node name="EnemyArea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="Animation" type="Sprite2D" parent="EnemyArea"]
+texture = ExtResource("1_jbauk")
+hframes = 8
+frame = 1
+
+[node name="CollisionSpace" type="CollisionShape2D" parent="EnemyArea"]
+position = Vector2(0, -1)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_b3sxx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "rooster_move"
+libraries = {
+"": SubResource("AnimationLibrary_h68aw")
+}
+
+[connection signal="body_entered" from="EnemyArea" to="." method="_on_enemy_area_body_entered"]

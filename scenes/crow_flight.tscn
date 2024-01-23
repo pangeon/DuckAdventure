@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://3ragowvf6fi2"]
+
+[ext_resource type="PackedScene" uid="uid://ebscg366brav" path="res://scenes/crow.tscn" id="1_lpb1e"]
+[ext_resource type="Script" path="res://scripts/crow_flight.gd" id="1_pgejo"]
+
+[sub_resource type="Curve2D" id="Curve2D_5apj4"]
+_data = {
+"points": PackedVector2Array(89.5787, 1.89386, -89.5787, -1.89386, 137.704, 207.53, 1.11736, 48.8791, -1.11736, -48.8791, 25.037, 91.9543, -91.3351, 0.946928, 91.3351, -0.946928, 140.833, -16.0287, 0.770674, -71.7731, -0.770674, 71.7731, 264.454, 104.609, 48.7932, -0.751577, -48.7932, 0.751577, 137.704, 207.53)
+}
+point_count = 5
+
+[node name="CrowFlight" type="Path2D"]
+position = Vector2(-89, 19)
+scale = Vector2(0.639053, 1.18537)
+curve = SubResource("Curve2D_5apj4")
+script = ExtResource("1_pgejo")
+
+[node name="CrowFlightPath" type="PathFollow2D" parent="."]
+position = Vector2(138.105, 207.518)
+rotation = 3.12118
+progress = 740.453
+
+[node name="Crow" parent="CrowFlightPath" instance=ExtResource("1_lpb1e")]
+
+[connection signal="crow_touch" from="CrowFlightPath/Crow" to="." method="_on_crow_crow_touch"]

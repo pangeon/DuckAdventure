@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://ebscg366brav"]
+
+[ext_resource type="Script" path="res://scripts/crow.gd" id="1_biabk"]
+[ext_resource type="Texture2D" uid="uid://bc724j7k481ok" path="res://assets/characters/crow/crow_frame_16.png" id="16_u07mj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4auj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_u07mj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h6wkn"]
+radius = 16.1245
+
+[node name="Crow" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_biabk")
+
+[node name="SpriteAnimation" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4auj3")
+autoplay = "default"
+frame_progress = 0.672654
+
+[node name="CollisionArea" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_h6wkn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
