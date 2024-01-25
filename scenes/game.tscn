@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://3ragowvf6fi2" path="res://scenes/crow_flight.tscn" id="5_r1mw5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5i0x"]
-size = Vector2(3603, 2)
+size = Vector2(5220, 2)
 
 [node name="Game" type="Node2D"]
 position = Vector2(206, 114)
@@ -26,11 +26,11 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionArea" type="CollisionShape2D" parent="Deathzone"]
-position = Vector2(792.5, 317)
+position = Vector2(2150, 315)
 shape = SubResource("RectangleShape2D_i5i0x")
 
 [node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(-171, 159)
+position = Vector2(-167, 262)
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -40,15 +40,42 @@ position = Vector2(204, 215)
 [node name="Rooster2" parent="Enemies" instance=ExtResource("4_w7lf1")]
 position = Vector2(1539, 162)
 
+[node name="Rooster3" parent="Enemies" instance=ExtResource("4_w7lf1")]
+position = Vector2(2673, -46)
+
+[node name="Rooster4" parent="Enemies" instance=ExtResource("4_w7lf1")]
+position = Vector2(3968, 152)
+
 [node name="CrowFlight" parent="Enemies" instance=ExtResource("5_r1mw5")]
-position = Vector2(-56, 32)
+position = Vector2(6, -108)
 
 [node name="CrowFlight2" parent="Enemies" instance=ExtResource("5_r1mw5")]
-position = Vector2(607, 255)
-rotation = -1.5708
+position = Vector2(518, 125)
+rotation = -1.13795
+
+[node name="CrowFlight3" parent="Enemies" instance=ExtResource("5_r1mw5")]
+position = Vector2(2514, -267)
+
+[node name="CrowFlight4" parent="Enemies" instance=ExtResource("5_r1mw5")]
+position = Vector2(3148, -73)
+rotation = -0.347321
+
+[node name="CrowFlight5" parent="Enemies" instance=ExtResource("5_r1mw5")]
+position = Vector2(3761, 135)
+rotation = -3.42259
+
+[node name="CrowFlight6" parent="Enemies" instance=ExtResource("5_r1mw5")]
+position = Vector2(3433, -60)
+rotation = -0.347321
 
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
 [connection signal="player_touch" from="Enemies/Rooster" to="." method="_on_enemy_player_touch"]
 [connection signal="player_touch" from="Enemies/Rooster2" to="." method="_on_enemy_player_touch"]
+[connection signal="player_touch" from="Enemies/Rooster3" to="." method="_on_enemy_player_touch"]
+[connection signal="player_touch" from="Enemies/Rooster4" to="." method="_on_enemy_player_touch"]
 [connection signal="touch_enemy_on_path" from="Enemies/CrowFlight" to="." method="_on_crow_flight_touch_enemy_on_path"]
 [connection signal="touch_enemy_on_path" from="Enemies/CrowFlight2" to="." method="_on_crow_flight_touch_enemy_on_path"]
+[connection signal="touch_enemy_on_path" from="Enemies/CrowFlight3" to="." method="_on_crow_flight_touch_enemy_on_path"]
+[connection signal="touch_enemy_on_path" from="Enemies/CrowFlight4" to="." method="_on_crow_flight_touch_enemy_on_path"]
+[connection signal="touch_enemy_on_path" from="Enemies/CrowFlight5" to="." method="_on_crow_flight_touch_enemy_on_path"]
+[connection signal="touch_enemy_on_path" from="Enemies/CrowFlight6" to="." method="_on_crow_flight_touch_enemy_on_path"]
