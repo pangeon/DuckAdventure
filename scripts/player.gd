@@ -1,6 +1,4 @@
-extends CharacterBody2D
-
-class_name Player
+class_name Player extends CharacterBody2D
 
 @export var gravity: int = 400
 @export var movement_speed: int = 125

@@ -1,4 +1,4 @@
-extends Node2D
+class_name Enemy extends Node2D
 
 signal player_touch
 

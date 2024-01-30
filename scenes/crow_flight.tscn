@@ -16,8 +16,8 @@ curve = SubResource("Curve2D_5apj4")
 script = ExtResource("1_pgejo")
 
 [node name="CrowFlightPath" type="PathFollow2D" parent="."]
-position = Vector2(249.569, -33.0525)
-rotation = 1.22042
+position = Vector2(249.569, -33.0531)
+rotation = 1.22041
 progress = 740.453
 
 [node name="Crow" parent="CrowFlightPath" instance=ExtResource("1_lpb1e")]

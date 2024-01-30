@@ -1,7 +1,14 @@
-extends Node2D
+class_name Game extends Node2D
 
-@onready var start_position: Marker2D = $StartPosition
+@onready var start_position: StaticBody2D = $StartGame
+@onready var end_level_marker: Area2D = $FinishLevelMarker
 @onready var player: Player = $Player
+@onready var end_level_info: Control = $Control
+
+func _ready():
+	end_level_info.visible = false
+	player.global_position = start_position.get_start_position()
+	end_level_marker.body_entered.connect(_on_exit_body_entered)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("exit"):
@@ -18,8 +25,18 @@ func _on_enemy_player_touch() -> void:
 func _on_crow_flight_touch_enemy_on_path() -> void:
 	reset_player_position()
 
+func _on_exit_body_entered(body: Player) -> void:
+	if body is Player:
+		end_level_info.visible = true
+	
 func reset_player_position() -> void:
 	player.velocity = Vector2.ZERO
-	player.global_position = start_position.global_position
+	player.global_position = start_position.get_start_position()
+	
+
+
+
+
+
 
 

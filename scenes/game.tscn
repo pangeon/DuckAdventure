@@ -1,14 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6u72kpg388ke"]
+[gd_scene load_steps=12 format=3 uid="uid://c6u72kpg388ke"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_3fa4r"]
 [ext_resource type="PackedScene" uid="uid://c40b8axm4uavk" path="res://scenes/background.tscn" id="2_2s8lu"]
 [ext_resource type="PackedScene" uid="uid://b0pc2867jvkm8" path="res://scenes/player.tscn" id="2_j1bwe"]
+[ext_resource type="Texture2D" uid="uid://cw8yuq8evyjq6" path="res://assets/textures/bg_sky_bigger.png" id="3_3kqrs"]
 [ext_resource type="PackedScene" uid="uid://cw67w67gncigk" path="res://scenes/level_1.tscn" id="3_gmotp"]
 [ext_resource type="PackedScene" uid="uid://x35n586nmokc" path="res://scenes/rooster.tscn" id="4_w7lf1"]
 [ext_resource type="PackedScene" uid="uid://3ragowvf6fi2" path="res://scenes/crow_flight.tscn" id="5_r1mw5"]
+[ext_resource type="PackedScene" uid="uid://qybskgb3pjw6" path="res://scenes/start_game.tscn" id="6_cufwp"]
+[ext_resource type="PackedScene" uid="uid://diojon5wh6to7" path="res://scenes/finish_level_marker.tscn" id="9_eenc4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5i0x"]
 size = Vector2(5220, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u5ymj"]
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+outline_size = 2
 
 [node name="Game" type="Node2D"]
 position = Vector2(206, 114)
@@ -16,9 +24,7 @@ script = ExtResource("1_3fa4r")
 metadata/_edit_horizontal_guides_ = [515.0]
 
 [node name="Background" parent="." instance=ExtResource("2_2s8lu")]
-
-[node name="Player" parent="." instance=ExtResource("2_j1bwe")]
-position = Vector2(-163, 209)
+texture_file = ExtResource("3_3kqrs")
 
 [node name="Level_1" parent="." instance=ExtResource("3_gmotp")]
 position = Vector2(-124, 305)
@@ -32,8 +38,8 @@ collision_mask = 2
 position = Vector2(2150, 315)
 shape = SubResource("RectangleShape2D_i5i0x")
 
-[node name="StartPosition" type="Marker2D" parent="."]
-position = Vector2(-167, 262)
+[node name="StartGame" parent="." instance=ExtResource("6_cufwp")]
+position = Vector2(-164, 298)
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -70,6 +76,29 @@ rotation = -3.42259
 [node name="CrowFlight6" parent="Enemies" instance=ExtResource("5_r1mw5")]
 position = Vector2(3433, -60)
 rotation = -0.347321
+
+[node name="Player" parent="." instance=ExtResource("2_j1bwe")]
+position = Vector2(-163, 281)
+
+[node name="FinishLevelMarker" parent="." instance=ExtResource("9_eenc4")]
+position = Vector2(4374, 161)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4228.0
+offset_right = 4268.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "CONGRATULATION
+END LEVEL 1"
+label_settings = SubResource("LabelSettings_u5ymj")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="Deathzone" to="." method="_on_deathzone_body_entered"]
 [connection signal="player_touch" from="Enemies/Rooster" to="." method="_on_enemy_player_touch"]

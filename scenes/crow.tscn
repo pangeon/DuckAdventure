@@ -1,17 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://ebscg366brav"]
+[gd_scene load_steps=10 format=3 uid="uid://ebscg366brav"]
 
 [ext_resource type="Script" path="res://scripts/crow.gd" id="1_biabk"]
-[ext_resource type="Texture2D" uid="uid://bc724j7k481ok" path="res://assets/characters/crow/crow_frame_16.png" id="16_u07mj"]
+[ext_resource type="Texture2D" uid="uid://owuyr51j68hw" path="res://assets/characters/crow/crow_1.png" id="2_cix3q"]
+[ext_resource type="Texture2D" uid="uid://dytw0bb7yv76" path="res://assets/characters/crow/crow_2.png" id="3_mbh8o"]
+[ext_resource type="Texture2D" uid="uid://cea7ibgvxgjli" path="res://assets/characters/crow/crow_3.png" id="4_ui7rw"]
+[ext_resource type="Texture2D" uid="uid://ceg5s8ek040ko" path="res://assets/characters/crow/crow_4.png" id="5_2gccl"]
+[ext_resource type="Texture2D" uid="uid://c70ap8otx7lp3" path="res://assets/characters/crow/crow_5.png" id="6_eut80"]
+[ext_resource type="Texture2D" uid="uid://bpcrm53dyiweg" path="res://assets/characters/crow/crow_6.png" id="7_ggphd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4auj3"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("16_u07mj")
+"texture": ExtResource("2_cix3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mbh8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ui7rw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2gccl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_eut80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ggphd")
 }],
 "loop": true,
 "name": &"default",
-"speed": 8.0
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h6wkn"]
@@ -23,9 +43,11 @@ collision_mask = 2
 script = ExtResource("1_biabk")
 
 [node name="SpriteAnimation" type="AnimatedSprite2D" parent="."]
+rotation = -0.785398
 sprite_frames = SubResource("SpriteFrames_4auj3")
 autoplay = "default"
-frame_progress = 0.672654
+frame = 3
+frame_progress = 0.667154
 
 [node name="CollisionArea" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_h6wkn")

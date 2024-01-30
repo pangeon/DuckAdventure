@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://qybskgb3pjw6"]
+
+[ext_resource type="Texture2D" uid="uid://0bajkqsymdr8" path="res://assets/objects/start_level.png" id="1_cor4y"]
+[ext_resource type="Script" path="res://scripts/start_game.gd" id="1_ir000"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfxmp"]
+size = Vector2(64, 16)
+
+[node name="StartGame" type="StaticBody2D"]
+script = ExtResource("1_ir000")
+
+[node name="SpriteImage" type="Sprite2D" parent="."]
+texture = ExtResource("1_cor4y")
+
+[node name="CollisionArea" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nfxmp")
+
+[node name="StartPosition" type="Marker2D" parent="."]
+position = Vector2(0, -43)
