@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqsfqrcv2ksla"
-path="res://.godot/imported/bg_sky.png-c728e86bc247bb5c4ffc2a79b9f3d5d2.ctex"
+uid="uid://43iwgongorfp"
+path="res://.godot/imported/houses.png-c1b221b5b467d84bb22369cde59a5f4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/bg_sky.png"
-dest_files=["res://.godot/imported/bg_sky.png-c728e86bc247bb5c4ffc2a79b9f3d5d2.ctex"]
+source_file="res://assets/textures/houses.png"
+dest_files=["res://.godot/imported/houses.png-c1b221b5b467d84bb22369cde59a5f4e.ctex"]
 
 [params]
 

@@ -65,7 +65,7 @@ reset={
 
 [physics]
 
-common/max_physics_steps_per_frame=60
+common/max_physics_steps_per_frame=80
 
 [rendering]
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://c6u72kpg388ke"]
+[gd_scene load_steps=13 format=3 uid="uid://c6u72kpg388ke"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_3fa4r"]
 [ext_resource type="PackedScene" uid="uid://c40b8axm4uavk" path="res://scenes/background.tscn" id="2_2s8lu"]
 [ext_resource type="PackedScene" uid="uid://b0pc2867jvkm8" path="res://scenes/player.tscn" id="2_j1bwe"]
 [ext_resource type="Texture2D" uid="uid://cw8yuq8evyjq6" path="res://assets/textures/bg_sky_bigger.png" id="3_3kqrs"]
 [ext_resource type="PackedScene" uid="uid://cw67w67gncigk" path="res://scenes/level_1.tscn" id="3_gmotp"]
+[ext_resource type="PackedScene" uid="uid://bcuidoearoisp" path="res://scenes/background_layer_2.tscn" id="4_bfobn"]
 [ext_resource type="PackedScene" uid="uid://x35n586nmokc" path="res://scenes/rooster.tscn" id="4_w7lf1"]
 [ext_resource type="PackedScene" uid="uid://3ragowvf6fi2" path="res://scenes/crow_flight.tscn" id="5_r1mw5"]
 [ext_resource type="PackedScene" uid="uid://qybskgb3pjw6" path="res://scenes/start_game.tscn" id="6_cufwp"]
@@ -25,6 +26,12 @@ metadata/_edit_horizontal_guides_ = [515.0]
 
 [node name="Background" parent="." instance=ExtResource("2_2s8lu")]
 texture_file = ExtResource("3_3kqrs")
+
+[node name="BackgroundLayer2" parent="." instance=ExtResource("4_bfobn")]
+script = null
+
+[node name="Player" parent="." instance=ExtResource("2_j1bwe")]
+position = Vector2(-163, 281)
 
 [node name="Level_1" parent="." instance=ExtResource("3_gmotp")]
 position = Vector2(-124, 305)
@@ -76,9 +83,6 @@ rotation = -3.42259
 [node name="CrowFlight6" parent="Enemies" instance=ExtResource("5_r1mw5")]
 position = Vector2(3433, -60)
 rotation = -0.347321
-
-[node name="Player" parent="." instance=ExtResource("2_j1bwe")]
-position = Vector2(-163, 281)
 
 [node name="FinishLevelMarker" parent="." instance=ExtResource("9_eenc4")]
 position = Vector2(4374, 161)

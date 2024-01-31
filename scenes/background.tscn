@@ -7,6 +7,7 @@
 script = ExtResource("1_osh52")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(0, 1)
 motion_mirroring = Vector2(960, 544)
 
 [node name="BackgroundTexture" type="Sprite2D" parent="ParallaxLayer"]
