@@ -2,7 +2,7 @@
 
 <p align="center">
   <img alt="Duck Adventure" src="icon.svg" width="200">
-  <p style="text-align: center; font-weight: bold">
+  <p align="center">
   Simple and funny pixel-art game 2D platformer.
   </p>
 </p>
