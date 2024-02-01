@@ -1,6 +1,6 @@
 class_name Background extends ParallaxBackground
 
-@export var texture_file: CompressedTexture2D = preload("res://assets/textures/bg_sky.png")
+@export var texture_file: CompressedTexture2D = preload("res://assets/textures/bg_sky_bigger.png")
 
 @export var scroll_speed: int = 10
 

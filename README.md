@@ -5,7 +5,13 @@
   <p align="center">
   Simple and funny pixel-art game 2D platformer.
   </p>
+  <p align="center"> 
+    <a href="https://cecherz.itch.io/duck-adventure">
+      <b>Play online</b>
+    </a>
+  </p>
 </p>
+
 
 ## Screens
 
