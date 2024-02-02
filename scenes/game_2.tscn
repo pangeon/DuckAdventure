@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://735rhnh74aij"]
+[gd_scene load_steps=13 format=3 uid="uid://735rhnh74aij"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_1u442"]
 [ext_resource type="PackedScene" uid="uid://b0pc2867jvkm8" path="res://scenes/player.tscn" id="1_2bwye"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://diojon5wh6to7" path="res://scenes/finish_level_marker.tscn" id="7_lgqg5"]
 [ext_resource type="PackedScene" uid="uid://x35n586nmokc" path="res://scenes/rooster.tscn" id="9_2p5mp"]
 [ext_resource type="PackedScene" uid="uid://3ragowvf6fi2" path="res://scenes/crow_flight.tscn" id="10_atbop"]
+[ext_resource type="PackedScene" uid="uid://dgtcw1t48yn8c" path="res://scenes/fish_swim.tscn" id="11_i2tp6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7qjit"]
 font_size = 32
@@ -63,22 +64,26 @@ rotation = 1.12748
 [node name="CrowFlight3" parent="Enemies" instance=ExtResource("10_atbop")]
 position = Vector2(923, 120)
 rotation = 1.28805
-scale = Vector2(0.639053, 1.18537)
 
 [node name="CrowFlight4" parent="Enemies" instance=ExtResource("10_atbop")]
 position = Vector2(1725, -11)
 rotation = 1.39626
-scale = Vector2(0.639053, 1.18537)
 
 [node name="CrowFlight5" parent="Enemies" instance=ExtResource("10_atbop")]
 position = Vector2(3548, 86.0001)
 rotation = 1.39626
-scale = Vector2(0.639053, 1.18537)
 
 [node name="CrowFlight6" parent="Enemies" instance=ExtResource("10_atbop")]
 position = Vector2(4212, -60)
 rotation = -0.0541052
-scale = Vector2(0.639053, 1.18537)
+
+[node name="FishSwim" parent="Enemies" instance=ExtResource("11_i2tp6")]
+z_index = -200
+position = Vector2(858, 467)
+
+[node name="FishSwim2" parent="Enemies" instance=ExtResource("11_i2tp6")]
+z_index = -200
+position = Vector2(3593, 467)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -108,3 +113,5 @@ vertical_alignment = 1
 [connection signal="touch_enemy_on_path" from="Enemies/CrowFlight4" to="." method="_on_crow_flight_touch_enemy_on_path"]
 [connection signal="touch_enemy_on_path" from="Enemies/CrowFlight5" to="." method="_on_crow_flight_touch_enemy_on_path"]
 [connection signal="touch_enemy_on_path" from="Enemies/CrowFlight6" to="." method="_on_crow_flight_touch_enemy_on_path"]
+[connection signal="touch_enemy_on_path" from="Enemies/FishSwim" to="." method="_on_fish_swim_touch_enemy_on_path"]
+[connection signal="touch_enemy_on_path" from="Enemies/FishSwim2" to="." method="_on_fish_swim_touch_enemy_on_path"]

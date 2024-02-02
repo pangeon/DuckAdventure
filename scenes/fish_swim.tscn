@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgtcw1t48yn8c"]
+
+[ext_resource type="Script" path="res://scripts/fish_swim.gd" id="1_7e1cr"]
+[ext_resource type="PackedScene" uid="uid://f7wh6ititnuo" path="res://scenes/fish.tscn" id="1_stmj7"]
+
+[sub_resource type="Curve2D" id="Curve2D_kqxj6"]
+_data = {
+"points": PackedVector2Array(0, -24.3608, 0, 24.3608, -287, 3, -20.0226, -1.66855, 20.0226, 1.66855, -237, 67, -42.4902, 1.85663, 42.4902, -1.85663, -170, -144, -25.0282, 1.00113, 25.0282, -1.00113, -99, 64, -19.6889, 0.33371, 19.6889, -0.33371, -31, -143, -26.3631, -1.33484, 26.3631, 1.33484, 38, 65, -27.6979, 2.33597, 27.6979, -2.33597, 104, -144, 30.3676, -0.66742, -30.3676, 0.66742, 116, 64, 21.6911, 0.66742, -21.6911, -0.66742, 40, -143, 28.3653, -1.33484, -28.3653, 1.33484, -34, 66, 25.362, -0.33371, -25.362, 0.33371, -95, -144, 27.0305, 0.33371, -27.0305, -0.33371, -160, 63, 22.6923, -0.66742, -22.6923, 0.66742, -243, -143, 0, 0, 0, 0, -288, 1, 0, 0, 0, 0, -287, 3)
+}
+point_count = 15
+
+[node name="FishSwim" type="Path2D"]
+curve = SubResource("Curve2D_kqxj6")
+script = ExtResource("1_7e1cr")
+
+[node name="FishSwimPath" type="PathFollow2D" parent="."]
+position = Vector2(-287, 3)
+rotation = 1.5708
+
+[node name="Fish" parent="FishSwimPath" instance=ExtResource("1_stmj7")]
+rotation = -3.14159
+
+[connection signal="fish_touch" from="FishSwimPath/Fish" to="." method="_on_fish_fish_touch"]

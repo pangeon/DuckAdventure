@@ -29,6 +29,9 @@ func _on_enemy_player_touch() -> void:
 func _on_crow_flight_touch_enemy_on_path() -> void:
 	reset_player_position()
 
+func _on_fish_swim_touch_enemy_on_path():
+	reset_player_position()
+
 func _on_exit_body_entered(body: CharacterBody2D) -> void:
 	if (body is Player) and (next_level != null):
 		end_level_info.visible = true
@@ -41,3 +44,6 @@ func reset_player_position() -> void:
 	player.velocity = Vector2.ZERO
 	player.global_position = start_position.get_start_position()
 	
+
+
+

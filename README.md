@@ -19,6 +19,7 @@
 
 ## Changelog
 
+* **Version 0.2_beta** add second level and new enemy
 * **Version 0.1_beta** first level prototype
 
 ## Credits 
