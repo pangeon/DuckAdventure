@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://735rhnh74aij"]
+[gd_scene load_steps=14 format=3 uid="uid://735rhnh74aij"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_1u442"]
 [ext_resource type="PackedScene" uid="uid://b0pc2867jvkm8" path="res://scenes/player.tscn" id="1_2bwye"]
+[ext_resource type="PackedScene" uid="uid://byrfhbjlkc8pv" path="res://scenes/game_3.tscn" id="2_bjmnu"]
 [ext_resource type="PackedScene" uid="uid://c40b8axm4uavk" path="res://scenes/background.tscn" id="2_m2be0"]
 [ext_resource type="PackedScene" uid="uid://bcuidoearoisp" path="res://scenes/background_layer_2.tscn" id="3_2so7d"]
 [ext_resource type="PackedScene" uid="uid://bx1y2bf0irgee" path="res://scenes/level_2.tscn" id="5_sg48j"]
@@ -19,6 +20,7 @@ outline_size = 2
 
 [node name="Game_2" type="Node2D"]
 script = ExtResource("1_1u442")
+next_level = ExtResource("2_bjmnu")
 
 [node name="Background" parent="." instance=ExtResource("2_m2be0")]
 
@@ -53,10 +55,6 @@ position = Vector2(3231, 308)
 [node name="Rooster4" parent="Enemies" instance=ExtResource("9_2p5mp")]
 position = Vector2(3957, 245)
 
-[node name="CrowFlight" parent="Enemies" instance=ExtResource("10_atbop")]
-position = Vector2(654, 63)
-rotation = -0.322886
-
 [node name="CrowFlight2" parent="Enemies" instance=ExtResource("10_atbop")]
 position = Vector2(351, -94)
 rotation = 1.12748
@@ -67,10 +65,6 @@ rotation = 1.28805
 
 [node name="CrowFlight4" parent="Enemies" instance=ExtResource("10_atbop")]
 position = Vector2(1725, -11)
-rotation = 1.39626
-
-[node name="CrowFlight5" parent="Enemies" instance=ExtResource("10_atbop")]
-position = Vector2(3548, 86.0001)
 rotation = 1.39626
 
 [node name="CrowFlight6" parent="Enemies" instance=ExtResource("10_atbop")]
@@ -95,8 +89,10 @@ offset_bottom = 167.0
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 279.0
+offset_top = -11.0
+offset_right = 571.0
+offset_bottom = 85.0
 text = "CONGRATULATION
 END LEVEL 2"
 label_settings = SubResource("LabelSettings_7qjit")
@@ -107,11 +103,9 @@ vertical_alignment = 1
 [connection signal="player_touch" from="Enemies/Rooster2" to="." method="_on_enemy_player_touch"]
 [connection signal="player_touch" from="Enemies/Rooster3" to="." method="_on_enemy_player_touch"]
 [connection signal="player_touch" from="Enemies/Rooster4" to="." method="_on_enemy_player_touch"]
-[connection signal="touch_enemy_on_path" from="Enemies/CrowFlight" to="." method="_on_crow_flight_touch_enemy_on_path"]
 [connection signal="touch_enemy_on_path" from="Enemies/CrowFlight2" to="." method="_on_crow_flight_touch_enemy_on_path"]
 [connection signal="touch_enemy_on_path" from="Enemies/CrowFlight3" to="." method="_on_crow_flight_touch_enemy_on_path"]
 [connection signal="touch_enemy_on_path" from="Enemies/CrowFlight4" to="." method="_on_crow_flight_touch_enemy_on_path"]
-[connection signal="touch_enemy_on_path" from="Enemies/CrowFlight5" to="." method="_on_crow_flight_touch_enemy_on_path"]
 [connection signal="touch_enemy_on_path" from="Enemies/CrowFlight6" to="." method="_on_crow_flight_touch_enemy_on_path"]
 [connection signal="touch_enemy_on_path" from="Enemies/FishSwim" to="." method="_on_fish_swim_touch_enemy_on_path"]
 [connection signal="touch_enemy_on_path" from="Enemies/FishSwim2" to="." method="_on_fish_swim_touch_enemy_on_path"]

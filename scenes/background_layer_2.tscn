@@ -7,7 +7,7 @@
 script = ExtResource("1_lpj8q")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-position = Vector2(0, -64)
+position = Vector2(0, -135)
 motion_mirroring = Vector2(960, 0)
 
 [node name="BackgroundTexture2" type="Sprite2D" parent="ParallaxLayer"]

@@ -13,22 +13,30 @@
 </p>
 
 
-## Screens
+## Screens:
 
 ![Concept Art 1](concept_art_1.png)
 
-## Changelog
+## Changelog:
 
+* **Version 0.3_beta** add trird level
 * **Version 0.2_beta** add second level and new enemy
 * **Version 0.1_beta** first level prototype
 
-## Credits 
+## Credits: 
 
 ### Programming and concept:
 
 * [Kamil Cecherz](https://cecherz.pl/)
 
-### Art game design:
+### Terrain design and level projects:
 
 * [Kamil Cecherz](https://cecherz.pl/)
+
+### Character design:
+
 * [Agnieszka Lasota](https://www.facebook.com/profile.php?id=100005252026390)
+
+### Test and suggestions:
+
+* [Łukasz Bednarski](https://github.com/Bedzik)

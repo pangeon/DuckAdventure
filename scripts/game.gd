@@ -44,6 +44,3 @@ func reset_player_position() -> void:
 	player.velocity = Vector2.ZERO
 	player.global_position = start_position.get_start_position()
 	
-
-
-
