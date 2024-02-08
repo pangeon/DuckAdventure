@@ -11,11 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dgtcw1t48yn8c" path="res://scenes/fish_swim.tscn" id="9_0mmvq"]
 [ext_resource type="PackedScene" uid="uid://3ragowvf6fi2" path="res://scenes/crow_flight.tscn" id="10_2666r"]
 [ext_resource type="PackedScene" uid="uid://x35n586nmokc" path="res://scenes/rooster.tscn" id="11_ty5k0"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_b0hrh"]
-font_size = 32
-font_color = Color(0, 0, 0, 1)
-outline_size = 2
+[ext_resource type="PackedScene" uid="uid://btxb5q7m8202o" path="res://scenes/end_level_message.tscn" id="12_yb7wn"]
 
 [node name="game_3" type="Node2D"]
 script = ExtResource("1_vmu0w")
@@ -65,25 +61,12 @@ position = Vector2(3606, 190)
 [node name="Rooster3" parent="Enemies" instance=ExtResource("11_ty5k0")]
 position = Vector2(4491, 247)
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 4239.0
-offset_top = 127.0
-offset_right = 4279.0
-offset_bottom = 167.0
-
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 404.0
-offset_top = -16.0
-offset_right = 696.0
-offset_bottom = 80.0
-text = "CONGRATULATION
-END LEVEL 3"
-label_settings = SubResource("LabelSettings_b0hrh")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="EndLevelMessage" parent="." instance=ExtResource("12_yb7wn")]
+offset_left = 4772.0
+offset_top = 176.0
+offset_right = 4772.0
+offset_bottom = 176.0
+end_level_message = "3"
 
 [connection signal="touch_enemy_on_path" from="Enemies/FishSwim" to="." method="_on_fish_swim_touch_enemy_on_path"]
 [connection signal="touch_enemy_on_path" from="Enemies/FishSwim2" to="." method="_on_fish_swim_touch_enemy_on_path"]

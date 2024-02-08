@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://btxb5q7m8202o"]
+
+[ext_resource type="Script" path="res://scripts/end_level_message.gd" id="1_0rtmw"]
+[ext_resource type="FontFile" uid="uid://gih7d534x8uv" path="res://assets/fonts/AmaticSC/AmaticSC-Bold.ttf" id="1_55x42"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4tlys"]
+font = ExtResource("1_55x42")
+font_size = 40
+font_color = Color(0.4, 0.223529, 0.192157, 1)
+
+[node name="EndLevelMessage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0rtmw")
+
+[node name="TextLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.0
+offset_top = -54.0
+offset_right = 114.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_4tlys")
+horizontal_alignment = 1
+vertical_alignment = 1

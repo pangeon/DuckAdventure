@@ -5,7 +5,7 @@ class_name Game extends Node2D
 @onready var start_position: StaticBody2D = $StartGame
 @onready var end_level_marker: Area2D = $FinishLevelMarker
 @onready var player: Player = $Player
-@onready var end_level_info: Control = $Control
+@onready var end_level_info: Control = $EndLevelMessage
 @onready var deathzone: Area2D = $Deathzone
 
 func _ready():

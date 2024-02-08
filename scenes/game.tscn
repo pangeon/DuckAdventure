@@ -11,11 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://qybskgb3pjw6" path="res://scenes/start_game.tscn" id="6_cufwp"]
 [ext_resource type="PackedScene" uid="uid://dbxrifr8r1hfr" path="res://scenes/deathzone.tscn" id="7_35rr0"]
 [ext_resource type="PackedScene" uid="uid://diojon5wh6to7" path="res://scenes/finish_level_marker.tscn" id="9_eenc4"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_u5ymj"]
-font_size = 32
-font_color = Color(0, 0, 0, 1)
-outline_size = 2
+[ext_resource type="PackedScene" uid="uid://btxb5q7m8202o" path="res://scenes/end_level_message.tscn" id="12_58lb2"]
 
 [node name="Game" type="Node2D"]
 position = Vector2(206, 114)
@@ -78,22 +74,12 @@ rotation = -3.42259
 position = Vector2(3433, -60)
 rotation = -0.347321
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 4228.0
-offset_right = 4268.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "CONGRATULATION
-END LEVEL 1"
-label_settings = SubResource("LabelSettings_u5ymj")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="EndLevelMessage" parent="." instance=ExtResource("12_58lb2")]
+offset_left = 4368.0
+offset_top = 73.0
+offset_right = 4368.0
+offset_bottom = 73.0
+end_level_message = "1"
 
 [connection signal="player_touch" from="Enemies/Rooster" to="." method="_on_enemy_player_touch"]
 [connection signal="player_touch" from="Enemies/Rooster2" to="." method="_on_enemy_player_touch"]
