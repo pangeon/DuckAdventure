@@ -16,7 +16,7 @@
 
 [node name="Game_3" type="Node2D"]
 script = ExtResource("1_vmu0w")
-time_to_complete_level = 120
+time_to_complete_level = 150
 
 [node name="Background" parent="." instance=ExtResource("1_pvjoi")]
 

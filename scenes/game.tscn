@@ -18,7 +18,7 @@
 position = Vector2(206, 114)
 script = ExtResource("1_3fa4r")
 next_level = ExtResource("2_xwmvw")
-time_to_complete_level = 120
+time_to_complete_level = 150
 metadata/_edit_horizontal_guides_ = [515.0]
 
 [node name="Background" parent="." instance=ExtResource("2_2s8lu")]
@@ -27,6 +27,7 @@ metadata/_edit_horizontal_guides_ = [515.0]
 script = null
 
 [node name="UI" parent="." instance=ExtResource("5_hoomf")]
+layer = 30
 
 [node name="Player" parent="." instance=ExtResource("2_j1bwe")]
 position = Vector2(-163, 281)

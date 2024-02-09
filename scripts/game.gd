@@ -1,13 +1,13 @@
 class_name Game extends Node2D
 
-@export var next_level: PackedScene = null
+@export var next_level: PackedScene = preload("res://scenes/ui.tscn")
 
 @onready var start_position: StaticBody2D = $StartGame
 @onready var end_level_marker: Area2D = $FinishLevelMarker
 @onready var player: Player = $Player
 @onready var end_level_info: Control = $EndLevelMessage
 @onready var deathzone: Area2D = $Deathzone
-@onready var ui: CanvasLayer = $UI # contain nodes: HUD -> TimeDisplay
+@onready var ui: CanvasLayer = $UI # nodes: HUD -> TimeDisplay and StartMenu
 
 @export var time_to_complete_level: int = 0
 var level_timer: Timer = Timer.new()
@@ -16,6 +16,8 @@ var remaining_time_to_complete_level: int = 0
 var win: bool = false
 
 func _ready() -> void:
+	ui.show_timer()
+	ui.hide_main_menu()
 	end_level_info.visible = false
 	player.global_position = start_position.get_start_position()
 	end_level_marker.body_entered.connect(_on_exit_body_entered)
@@ -45,15 +47,19 @@ func _process(_delta: float) -> void:
 		get_tree().reload_current_scene()
 		
 func _on_deathzone_body_entered(_body: Player) -> void:
+	await get_tree().create_timer(0.3).timeout
 	reset_player_position()
 
 func _on_enemy_player_touch() -> void:
+	await get_tree().create_timer(0.3).timeout
 	reset_player_position()
 
 func _on_crow_flight_touch_enemy_on_path() -> void:
+	await get_tree().create_timer(0.3).timeout
 	reset_player_position()
 
-func _on_fish_swim_touch_enemy_on_path():
+func _on_fish_swim_touch_enemy_on_path() -> void:
+	await get_tree().create_timer(0.3).timeout
 	reset_player_position()
 
 func _on_exit_body_entered(body: CharacterBody2D) -> void:
@@ -63,7 +69,8 @@ func _on_exit_body_entered(body: CharacterBody2D) -> void:
 		await get_tree().create_timer(1.5).timeout
 		get_tree().change_scene_to_packed(next_level)
 	else:
-		get_tree().quit()
+		ui.show_main_menu()
+		ui.hide_timer()
 	
 func reset_player_position() -> void:
 	player.velocity = Vector2.ZERO

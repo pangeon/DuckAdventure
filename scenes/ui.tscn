@@ -1,11 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://bs3dvw2kmwrcb"]
+[gd_scene load_steps=7 format=3 uid="uid://bs3dvw2kmwrcb"]
 
 [ext_resource type="FontFile" uid="uid://gih7d534x8uv" path="res://assets/fonts/AmaticSC/AmaticSC-Bold.ttf" id="1_btoxq"]
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_ppepb"]
+[ext_resource type="PackedScene" uid="uid://c40b8axm4uavk" path="res://scenes/background.tscn" id="2_ab57o"]
+[ext_resource type="Texture2D" uid="uid://b6d0p1bemuhap" path="res://icon.png" id="4_2bll1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ctgjb"]
 font = ExtResource("1_btoxq")
 font_size = 60
+
+[sub_resource type="LabelSettings" id="LabelSettings_t62eu"]
+font = ExtResource("1_btoxq")
+font_size = 80
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_ppepb")
@@ -31,3 +37,75 @@ offset_bottom = 79.0
 grow_horizontal = 0
 text = "TIME: 60"
 label_settings = SubResource("LabelSettings_ctgjb")
+
+[node name="StartMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" parent="StartMenu" instance=ExtResource("2_ab57o")]
+
+[node name="GameLogo" type="Sprite2D" parent="StartMenu"]
+position = Vector2(479, 145)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_2bll1")
+
+[node name="GameTitle" type="Label" parent="StartMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -185.5
+offset_top = -4.5
+offset_right = 185.5
+offset_bottom = 100.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "DUCK ADVENTURE"
+label_settings = SubResource("LabelSettings_t62eu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="StartMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = 105.0
+offset_right = 121.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_btoxq")
+theme_override_font_sizes/font_size = 40
+text = "START
+"
+icon_alignment = 1
+
+[node name="ExitButton" type="Button" parent="StartMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = 175.0
+offset_right = 92.0
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_btoxq")
+theme_override_font_sizes/font_size = 40
+text = "EXIT"
+
+[connection signal="pressed" from="StartMenu/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="StartMenu/ExitButton" to="." method="_on_exit_button_pressed"]
