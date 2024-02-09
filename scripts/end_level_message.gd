@@ -5,4 +5,3 @@ extends Control
 
 func _ready():
 	text_label.text = "CONGRATULATION\n END LEVEL" + str(end_level_message)
-

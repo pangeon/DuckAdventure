@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c6u72kpg388ke"]
+[gd_scene load_steps=14 format=3 uid="uid://c6u72kpg388ke"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_3fa4r"]
 [ext_resource type="PackedScene" uid="uid://c40b8axm4uavk" path="res://scenes/background.tscn" id="2_2s8lu"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cw67w67gncigk" path="res://scenes/level_1.tscn" id="3_gmotp"]
 [ext_resource type="PackedScene" uid="uid://bcuidoearoisp" path="res://scenes/background_layer_2.tscn" id="4_bfobn"]
 [ext_resource type="PackedScene" uid="uid://x35n586nmokc" path="res://scenes/rooster.tscn" id="4_w7lf1"]
+[ext_resource type="PackedScene" uid="uid://bs3dvw2kmwrcb" path="res://scenes/ui.tscn" id="5_hoomf"]
 [ext_resource type="PackedScene" uid="uid://3ragowvf6fi2" path="res://scenes/crow_flight.tscn" id="5_r1mw5"]
 [ext_resource type="PackedScene" uid="uid://qybskgb3pjw6" path="res://scenes/start_game.tscn" id="6_cufwp"]
 [ext_resource type="PackedScene" uid="uid://dbxrifr8r1hfr" path="res://scenes/deathzone.tscn" id="7_35rr0"]
@@ -17,12 +18,15 @@
 position = Vector2(206, 114)
 script = ExtResource("1_3fa4r")
 next_level = ExtResource("2_xwmvw")
+time_to_complete_level = 120
 metadata/_edit_horizontal_guides_ = [515.0]
 
 [node name="Background" parent="." instance=ExtResource("2_2s8lu")]
 
 [node name="BackgroundLayer2" parent="." instance=ExtResource("4_bfobn")]
 script = null
+
+[node name="UI" parent="." instance=ExtResource("5_hoomf")]
 
 [node name="Player" parent="." instance=ExtResource("2_j1bwe")]
 position = Vector2(-163, 281)
@@ -75,9 +79,9 @@ position = Vector2(3433, -60)
 rotation = -0.347321
 
 [node name="EndLevelMessage" parent="." instance=ExtResource("12_58lb2")]
-offset_left = 4368.0
+offset_left = 4383.0
 offset_top = 73.0
-offset_right = 4368.0
+offset_right = 4383.0
 offset_bottom = 73.0
 end_level_message = "1"
 

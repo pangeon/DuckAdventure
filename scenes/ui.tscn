@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs3dvw2kmwrcb"]
+
+[ext_resource type="FontFile" uid="uid://gih7d534x8uv" path="res://assets/fonts/AmaticSC/AmaticSC-Bold.ttf" id="1_btoxq"]
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_ppepb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ctgjb"]
+font = ExtResource("1_btoxq")
+font_size = 60
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_ppepb")
+
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TimeDisplay" type="Label" parent="HUD"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -157.0
+offset_right = -18.0
+offset_bottom = 79.0
+grow_horizontal = 0
+text = "TIME: 60"
+label_settings = SubResource("LabelSettings_ctgjb")

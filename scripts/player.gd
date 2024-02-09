@@ -38,7 +38,3 @@ func update_animation(direction: int) -> void:
 			duck_animated_sprite.play("jump")
 		else:
 			duck_animated_sprite.play("default")
-
-
-
-	

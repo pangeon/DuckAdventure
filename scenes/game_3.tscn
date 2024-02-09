@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://byrfhbjlkc8pv"]
+[gd_scene load_steps=14 format=3 uid="uid://byrfhbjlkc8pv"]
 
 [ext_resource type="PackedScene" uid="uid://c40b8axm4uavk" path="res://scenes/background.tscn" id="1_pvjoi"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_vmu0w"]
 [ext_resource type="PackedScene" uid="uid://bcuidoearoisp" path="res://scenes/background_layer_2.tscn" id="2_jaywg"]
 [ext_resource type="PackedScene" uid="uid://b0pc2867jvkm8" path="res://scenes/player.tscn" id="3_7n2eo"]
 [ext_resource type="PackedScene" uid="uid://dbxrifr8r1hfr" path="res://scenes/deathzone.tscn" id="4_2neok"]
+[ext_resource type="PackedScene" uid="uid://bs3dvw2kmwrcb" path="res://scenes/ui.tscn" id="4_4fphl"]
 [ext_resource type="PackedScene" uid="uid://bxh1mwh77mruh" path="res://scenes/level_3.tscn" id="4_qvbkd"]
 [ext_resource type="PackedScene" uid="uid://qybskgb3pjw6" path="res://scenes/start_game.tscn" id="5_iaf2e"]
 [ext_resource type="PackedScene" uid="uid://diojon5wh6to7" path="res://scenes/finish_level_marker.tscn" id="6_7y4p4"]
@@ -13,13 +14,16 @@
 [ext_resource type="PackedScene" uid="uid://x35n586nmokc" path="res://scenes/rooster.tscn" id="11_ty5k0"]
 [ext_resource type="PackedScene" uid="uid://btxb5q7m8202o" path="res://scenes/end_level_message.tscn" id="12_yb7wn"]
 
-[node name="game_3" type="Node2D"]
+[node name="Game_3" type="Node2D"]
 script = ExtResource("1_vmu0w")
+time_to_complete_level = 120
 
 [node name="Background" parent="." instance=ExtResource("1_pvjoi")]
 
 [node name="BackgroundLayer2" parent="." instance=ExtResource("2_jaywg")]
 script = null
+
+[node name="UI" parent="." instance=ExtResource("4_4fphl")]
 
 [node name="Player" parent="." instance=ExtResource("3_7n2eo")]
 position = Vector2(32, 376)
@@ -62,9 +66,9 @@ position = Vector2(3606, 190)
 position = Vector2(4491, 247)
 
 [node name="EndLevelMessage" parent="." instance=ExtResource("12_yb7wn")]
-offset_left = 4772.0
+offset_left = 4782.0
 offset_top = 176.0
-offset_right = 4772.0
+offset_right = 4782.0
 offset_bottom = 176.0
 end_level_message = "3"
 

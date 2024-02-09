@@ -7,12 +7,36 @@ class_name Game extends Node2D
 @onready var player: Player = $Player
 @onready var end_level_info: Control = $EndLevelMessage
 @onready var deathzone: Area2D = $Deathzone
+@onready var ui: CanvasLayer = $UI # contain nodes: HUD -> TimeDisplay
 
-func _ready():
+@export var time_to_complete_level: int = 0
+var level_timer: Timer = Timer.new()
+var remaining_time_to_complete_level: int = 0
+
+var win: bool = false
+
+func _ready() -> void:
 	end_level_info.visible = false
 	player.global_position = start_position.get_start_position()
 	end_level_marker.body_entered.connect(_on_exit_body_entered)
 	deathzone.body_entered.connect(_on_deathzone_body_entered)
+	
+	remaining_time_to_complete_level = time_to_complete_level
+	ui.set_timer(remaining_time_to_complete_level)
+	
+	level_timer.name = "Level Time"
+	level_timer.wait_time = 1
+	level_timer.timeout.connect(_on_level_remaining_time_to_complete_timeout)
+	add_child(level_timer)
+	level_timer.start()
+
+func  _on_level_remaining_time_to_complete_timeout() -> void:
+	if win == false:
+		remaining_time_to_complete_level -= 1
+		ui.set_timer(remaining_time_to_complete_level)
+		if remaining_time_to_complete_level < 0:
+			reset_player_position()
+			ui.set_timer(remaining_time_to_complete_level)
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("exit"):
@@ -35,6 +59,7 @@ func _on_fish_swim_touch_enemy_on_path():
 func _on_exit_body_entered(body: CharacterBody2D) -> void:
 	if (body is Player) and (next_level != null):
 		end_level_info.visible = true
+		win = true
 		await get_tree().create_timer(1.5).timeout
 		get_tree().change_scene_to_packed(next_level)
 	else:
@@ -43,4 +68,7 @@ func _on_exit_body_entered(body: CharacterBody2D) -> void:
 func reset_player_position() -> void:
 	player.velocity = Vector2.ZERO
 	player.global_position = start_position.get_start_position()
-	
+	reset_time()
+
+func reset_time() -> void:
+	remaining_time_to_complete_level = time_to_complete_level
