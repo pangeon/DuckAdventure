@@ -19,6 +19,10 @@
 
 ## Changelog:
 
+* **Version 1.0**
+  - add HUD timer 
+  - add start menu
+  - create new game logo 
 * **Version 0.3_beta** add trird level
 * **Version 0.2_beta** add second level and new enemy
 * **Version 0.1_beta** first level prototype
@@ -29,14 +33,21 @@
 
 * [Kamil Cecherz](https://cecherz.pl/)
 
-### Terrain design and level projects:
+### Terrain design & level projects:
 
 * [Kamil Cecherz](https://cecherz.pl/)
 
-### Character design:
+### Character design & logo project:
 
 * [Agnieszka Lasota](https://www.facebook.com/profile.php?id=100005252026390)
+
+### Fonts
+
+Google Fonts - contributors:
+* [AmaticSC](https://github.com/googlefonts/AmaticSC)
 
 ### Test and suggestions:
 
 * [Łukasz Bednarski](https://github.com/Bedzik)
+
+
