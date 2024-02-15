@@ -18,7 +18,7 @@
 position = Vector2(206, 114)
 script = ExtResource("1_3fa4r")
 next_level = ExtResource("2_xwmvw")
-time_to_complete_level = 150
+time_to_complete_level = 180
 metadata/_edit_horizontal_guides_ = [515.0]
 
 [node name="Background" parent="." instance=ExtResource("2_2s8lu")]
@@ -68,16 +68,12 @@ rotation = -1.13795
 position = Vector2(2514, -267)
 
 [node name="CrowFlight4" parent="Enemies" instance=ExtResource("5_r1mw5")]
-position = Vector2(3148, -73)
+position = Vector2(3146, -107)
 rotation = -0.347321
-
-[node name="CrowFlight5" parent="Enemies" instance=ExtResource("5_r1mw5")]
-position = Vector2(3761, 135)
-rotation = -3.42259
 
 [node name="CrowFlight6" parent="Enemies" instance=ExtResource("5_r1mw5")]
-position = Vector2(3433, -60)
-rotation = -0.347321
+position = Vector2(3561, -159)
+rotation = 0.0698132
 
 [node name="EndLevelMessage" parent="." instance=ExtResource("12_58lb2")]
 offset_left = 4383.0
@@ -94,5 +90,4 @@ end_level_message = "1"
 [connection signal="touch_enemy_on_path" from="Enemies/CrowFlight2" to="." method="_on_crow_flight_touch_enemy_on_path"]
 [connection signal="touch_enemy_on_path" from="Enemies/CrowFlight3" to="." method="_on_crow_flight_touch_enemy_on_path"]
 [connection signal="touch_enemy_on_path" from="Enemies/CrowFlight4" to="." method="_on_crow_flight_touch_enemy_on_path"]
-[connection signal="touch_enemy_on_path" from="Enemies/CrowFlight5" to="." method="_on_crow_flight_touch_enemy_on_path"]
 [connection signal="touch_enemy_on_path" from="Enemies/CrowFlight6" to="." method="_on_crow_flight_touch_enemy_on_path"]

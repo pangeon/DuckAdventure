@@ -19,6 +19,10 @@
 
 ## Changelog:
 
+* **Version 1.1**
+  - fix level design 
+  - fix visual errors
+  - change start menu (web version) 
 * **Version 1.0**
   - add HUD timer 
   - add start menu
