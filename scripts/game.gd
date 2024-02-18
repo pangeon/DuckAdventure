@@ -18,7 +18,9 @@ var win: bool = false
 func _ready() -> void:
 	ui.show_timer()
 	ui.hide_main_menu()
-	end_level_info.visible = false
+	
+	jukebox.play_music("res://assets/audio/game_soundtrack.wav", -8, "Game melody")
+	end_level_info.visible = false		
 	player.global_position = start_position.get_start_position()
 	end_level_marker.body_entered.connect(_on_exit_body_entered)
 	deathzone.body_entered.connect(_on_deathzone_body_entered)
@@ -47,26 +49,27 @@ func _process(_delta: float) -> void:
 		get_tree().reload_current_scene()
 		
 func _on_deathzone_body_entered(_body: Player) -> void:
-	await get_tree().create_timer(0.3).timeout
+	jukebox.play_sound("res://assets/audio/hit.wav", "deathzone hit")
 	reset_player_position()
 
 func _on_enemy_player_touch() -> void:
-	await get_tree().create_timer(0.3).timeout
+	jukebox.play_sound("res://assets/audio/hit.wav", "rooster enemy hit")
 	reset_player_position()
 
 func _on_crow_flight_touch_enemy_on_path() -> void:
-	await get_tree().create_timer(0.3).timeout
+	jukebox.play_sound("res://assets/audio/hit.wav", "crow enemy hit")
 	reset_player_position()
 
 func _on_fish_swim_touch_enemy_on_path() -> void:
-	await get_tree().create_timer(0.3).timeout
+	jukebox.play_sound("res://assets/audio/hit.wav", "fish enemy hit")
 	reset_player_position()
 
 func _on_exit_body_entered(body: CharacterBody2D) -> void:
 	if (body is Player) and (next_level != null):
+		jukebox.play_music("res://assets/audio/win.wav", 0, "Win melody")
 		end_level_info.visible = true
 		win = true
-		await get_tree().create_timer(1.5).timeout
+		await get_tree().create_timer(2.5).timeout
 		get_tree().change_scene_to_packed(next_level)
 	else:
 		ui.show_main_menu()

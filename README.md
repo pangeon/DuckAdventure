@@ -15,10 +15,13 @@
 
 ## Screens:
 
-![Concept Art 1](concept_art_1.png)
+![game screens](screens/screens_bar.jpg)
 
 ## Changelog:
 
+* **Version 1.2**
+  - add sound
+  - add game sountracks
 * **Version 1.1**
   - fix level design 
   - fix visual errors
@@ -45,10 +48,18 @@
 
 * [Agnieszka Lasota](https://www.facebook.com/profile.php?id=100005252026390)
 
-### Fonts
+### Fonts:
 
 Google Fonts - contributors:
 * [AmaticSC](https://github.com/googlefonts/AmaticSC)
+
+### Music and sounds:
+
+* Jump SFX [cabled_mess](https://freesound.org/people/cabled_mess/sounds/350898/)
+* Hit SFX [Anthousai](https://freesound.org/people/Anthousai/sounds/406262/)
+* Start melody [Mrthenoronha](https://freesound.org/people/Mrthenoronha/sounds/520710/)
+* Game soundtrack [ZHRØ](https://freesound.org/people/ZHR%C3%98/sounds/668879/)
+* Win melody [LittleRobotSoundFactory](https://freesound.org/people/LittleRobotSoundFactory/sounds/270528/)
 
 ### Test and suggestions:
 

@@ -4,6 +4,7 @@ class_name UI extends CanvasLayer
 @onready var main_menu: Control = $StartMenu
 
 func _ready() -> void:
+	jukebox.play_music("res://assets/audio/start_soundtrack.wav", -20, "Start melody")
 	hide_timer()
 
 func set_timer(remaining_time: int) -> void:

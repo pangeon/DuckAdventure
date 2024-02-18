@@ -16,7 +16,8 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("jump") && is_on_floor():
 		velocity.y = -jump_power
-	
+		jukebox.play_sound("res://assets/audio/jump.wav", "jump sound")
+		
 	direction = Input.get_axis("move_left", "move_right")
 	
 	if direction != 0:
