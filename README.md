@@ -18,7 +18,9 @@
 ![game screens](screens/screens_bar.jpg)
 
 ## Changelog:
-
+* **Version 1.2.1**
+  - fix error with autoplay
+  - fix error with music players
 * **Version 1.2**
   - add sound
   - add game sountracks

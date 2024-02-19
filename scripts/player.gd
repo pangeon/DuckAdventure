@@ -7,7 +7,7 @@ class_name Player extends CharacterBody2D
 @onready var duck_animated_sprite: AnimatedSprite2D = $Duck
 
 func _process(delta: float) -> void:
-	var direction: int = 0
+	var direction: float = 0
 	
 	if is_on_floor() == false:
 		velocity.y += gravity * delta
@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 	move_and_slide()
 	update_animation(direction)
 	
-func update_animation(direction: int) -> void:
+func update_animation(direction: float) -> void:
 	if is_on_floor():
 		if direction == 0:
 			duck_animated_sprite.play("default")

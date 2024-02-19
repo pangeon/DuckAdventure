@@ -18,7 +18,7 @@ var win: bool = false
 func _ready() -> void:
 	ui.show_timer()
 	ui.hide_main_menu()
-	
+
 	jukebox.play_music("res://assets/audio/game_soundtrack.wav", -8, "Game melody")
 	end_level_info.visible = false		
 	player.global_position = start_position.get_start_position()
