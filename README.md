@@ -18,6 +18,8 @@
 ![game screens](screens/screens_bar.jpg)
 
 ## Changelog:
+* **Version 1.2.2**
+  - change start melody
 * **Version 1.2.1**
   - fix error with autoplay
   - fix error with music players
@@ -59,7 +61,7 @@ Google Fonts - contributors:
 
 * Jump SFX [cabled_mess](https://freesound.org/people/cabled_mess/sounds/350898/)
 * Hit SFX [Anthousai](https://freesound.org/people/Anthousai/sounds/406262/)
-* Start melody [Mrthenoronha](https://freesound.org/people/Mrthenoronha/sounds/520710/)
+* Start melody [Łukasz Cecherz](https://lukas.cecherz.pl/)
 * Game soundtrack [ZHRØ](https://freesound.org/people/ZHR%C3%98/sounds/668879/)
 * Win melody [LittleRobotSoundFactory](https://freesound.org/people/LittleRobotSoundFactory/sounds/270528/)
 
